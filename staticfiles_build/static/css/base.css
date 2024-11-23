@@ -14,9 +14,11 @@
   /* Full page with rotating RGB border */
   body {
     position: relative;
+    font-family: sans-serif;
     background: black;
   }
   
+  /* RGB Rotating Border */
   body::before {
     content: '';
     position: absolute;
@@ -28,29 +30,55 @@
     border: 8px solid transparent;
     border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
     border-image-slice: 1;
-    animation: rgb-rotate 2s linear infinite; /* Reduced duration for faster rotation */
+    animation: rgb-rotate 2s linear infinite; /* Faster rotation */
   }
   
-  /* Content styling */
+  /* Confetti canvas */
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Keep it behind the content */
+  }
+  
+  /* Content container */
   .content {
     position: relative;
+    z-index: 2; /* Ensure it is above the canvas */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
+    color: white;
   }
   
-  h1 {
+  /* Heading styling */
+  .content h1 {
     font-size: 3em;
-    animation: glow-text 1.5s ease-in-out infinite; /* Adjusted for a faster glowing effect */
+    opacity: 0.8;
+    animation: glow-text 1.5s ease-in-out infinite; /* Glow effect */
+    margin-bottom: 20px;
   }
   
-  p {
-    font-size: 1.2em;
-    opacity: 0.8;
+  /* Image styling */
+  .content img {
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.3s;
+  }
+  
+  .content img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
   }
   
   /* Keyframe animations */
