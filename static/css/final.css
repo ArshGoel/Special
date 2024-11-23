@@ -45,6 +45,7 @@ body {
 img {
   max-height: 200px;
   width: 100%;
+  object-fit: contain; /* Ensures the aspect ratio is maintained while fitting within the container */
   user-select: none;
 }
 
