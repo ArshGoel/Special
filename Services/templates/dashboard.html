@@ -7,37 +7,6 @@
     <title>Happy Birthday Ashu</title>
     <link rel="icon" href="{% static "images/logo.jpg" %}">
     {% block extra_css %}
-    <style>
-        html,
-        body {
-          margin: 0;
-          padding: 0;
-          width: 100vw;
-          height: 100vh;
-          background: black;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-    
-        img {
-          position: relative;
-          width: 200px;
-          height: auto;
-          border-radius: 15px;
-          cursor: pointer;
-          transition: transform 0.3s, filter 0.3s;
-        }
-    
-        img:hover {
-          transform: scale(1.1);
-          filter: brightness(1.2);
-        }
-    
-        img:focus {
-          outline: none;
-        }
-      </style>
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
     {% endblock extra_css %}
   </head>
