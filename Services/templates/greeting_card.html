@@ -1,0 +1,48 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <!-- Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/greeting_card.css' %}">
+{% endblock extra_css %}
+
+  </head>
+  <body>
+    <div class="card">
+      <div class="outside">
+        <div class="front">
+          <p>Happy Birthday
+            My Love!</p>
+          <div class="cake">
+            <div class="top-layer"></div>
+            <div class="middle-layer"></div>
+            <div class="bottom-layer"></div>
+            <div class="candle"></div>
+          </div>
+        </div>
+        <div class="back"></div>
+      </div>
+      <div class="inside">
+        <p>To my dearest Babu,
+
+            Today is as special as you are to me, because it celebrates the day you came into this world—a world that became brighter, happier, and more beautiful because of you.
+            
+            You are the melody to my heart, the sparkle in my days, and the calm in my chaos. Every moment with you feels like a gift, and I’m endlessly grateful to have you in my life.
+            
+            I hope your birthday is filled with love, laughter, and everything that makes you happiest. May all your dreams come true, because you are the dream I never want to wake up from.
+            
+            From Yours To Mine ❤️</p>
+        <h1>&#127873;</h1>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock content %}

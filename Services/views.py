@@ -6,3 +6,6 @@ def dashboard(request):
 
 def final(request):
     return render(request,'final.html')
+
+def greeting_card(request):
+    return render(request,'greeting_card.html')
