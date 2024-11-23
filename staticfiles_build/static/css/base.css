@@ -1,0 +1,77 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Full page with rotating RGB border */
+  body {
+    position: relative;
+    background: black;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border: 8px solid transparent;
+    border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+    border-image-slice: 1;
+    animation: rgb-rotate 2s linear infinite; /* Reduced duration for faster rotation */
+  }
+  
+  /* Content styling */
+  .content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3em;
+    animation: glow-text 1.5s ease-in-out infinite; /* Adjusted for a faster glowing effect */
+  }
+  
+  p {
+    font-size: 1.2em;
+    opacity: 0.8;
+  }
+  
+  /* Keyframe animations */
+  @keyframes rgb-rotate {
+    0% {
+      border-image-source: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+    }
+    50% {
+      border-image-source: linear-gradient(270deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    }
+    100% {
+      border-image-source: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+    }
+  }
+  
+  @keyframes glow-text {
+    0%, 100% {
+      text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 40px yellow, 0 0 60px green, 0 0 80px blue;
+    }
+    50% {
+      text-shadow: 0 0 20px blue, 0 0 40px green, 0 0 60px yellow, 0 0 80px orange, 0 0 100px red;
+    }
+  }
+  
